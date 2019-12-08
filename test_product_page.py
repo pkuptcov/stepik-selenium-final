@@ -10,3 +10,4 @@ def test_guest_can_add_product_to_basket(browser):
     page.should_be_right_title()
     page.should_be_right_price()
 
+
