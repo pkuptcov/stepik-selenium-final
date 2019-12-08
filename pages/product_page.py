@@ -10,7 +10,7 @@ class ProductPage(BasePage):
     def should_be_right_title(self):
         product_title = self.browser.find_element(*ProductPageLocator.PRODUCT_TITLE).text
         success_message = self.browser.find_element(*ProductPageLocator.SUCCESS_MESSAGE).text
-        assert product_title in success_message, "Product title doesn't match product name added"
+        assert f'{product_title} был добавлен в вашу корзину.' == success_message, "Product title doesn't match product name added"
 
     def should_be_right_price(self):
         product_price = self.browser.find_element(*ProductPageLocator.PRODUCT_PRICE).text
