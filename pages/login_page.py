@@ -26,3 +26,11 @@ class LoginPage(BasePage):
         password_input.send_keys(password)
         password_confirm_input.send_keys(password)
         login_submit.click()
+
+    def auth_user(self, email, password):
+        email_input = self.browser.find_element(*LoginPageLocators.LOGIN_EMAIL_INPUT)
+        password_input = self.browser.find_element(*LoginPageLocators.LOGIN_PASSWORD_INPUT)
+        login_submit = self.browser.find_element(*LoginPageLocators.LOGIN_SUBMIT)
+        email_input.send_keys(email)
+        password_input.send_keys(password)
+        login_submit.click()
